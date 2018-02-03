@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<title>Kitsunebi 使用常见问题</title>
+</head>
+<body>
+<header>
+	<h1>Kitsunebi 使用常见问题</h1>
+</header>
+<section class="cd-faq">
+	<div class="cd-faq-items">
+		<ul id="basics" class="cd-faq-group">
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么连接会自动断开？</a>
+				<div class="cd-faq-content">
+          <p>检查是否开启了“睡眠时断开连接”功能。</p>
+					<p>解决方法：</p>
+					<p>1. 关闭该功能：通常设置 -&gt; 睡眠时断开连接</p>
+          <br/>
+					<p>可能是因为使用内存过多， 导致应用进程被 iOS 系统干掉了。</p>
+					<p>解决方法：</p>
+					<p>1. 设置一个合理的最大连接数，连接数越大并不代表速度越快，现时推荐设置为 16 或 24。</p>
+          <p>2. 规则数量不要太多，过多会影响内存使用量，请保持一个合理的数目，一般不需要超过 3000 条，如果超过这个数目，很明显你的规则需要优化了。</p>
+          <p>3. 开启“自动重连”功能：高级特性 -&gt; 自动重连。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么点击 Widget 的开关时总会跳到 App 里面？</a>
+				<div class="cd-faq-content">
+					<p>因为你开启“自动重连”了。</p>
+					<p>解决方法：</p>
+          <p>1. 关闭“自动重连”功能：高级特性 -&gt; 自动重连。</p>
+				  <br/>
+          <p>注：暂时没有两全其美的方法，这个是 iOS 系统的 bug，已经汇报给苹果就看什么时候会修复了。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">想用 v2ray-core 某项功能，但没找到哪里可以设置，怎么办？</a>
+				<div class="cd-faq-content">
+					<p>使用自定义配置：高级特性 -&gt; 自定义配置。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么频繁断流？</a>
+				<div class="cd-faq-content">
+					<p>请详细描述你的问题，“断流”这个词包括的范围太大，任何开发者都不太可能正确理解你所指的是什么，反正你不描述详细，不给任何上下文的话，我是理解不了。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么在同样配置下总是比 XXX 软件慢很多？</a>
+				<div class="cd-faq-content">
+					<p>首先这个“同样配置”有点暧昧了，App 提供了非常多的配置项，除非你全部熟悉了，不然你不能说是“同样配置”。</p>
+          <br/>
+					<p>好吧，我其实大概能理解你的意思，下面有几个步骤你可以尝试下（不是按顺序的，每做完一个设置你都可以试试效果）：</p>
+					<p>1. 把 App 还原到默认设置：通常设定 -&gt; 重置所有设定。</p>
+          <p>2. 开启 Full Tunnel：高级特性 -&gt; Full Tunnel。</p>
+          <p>3. 关闭 mux：这个在你的服务器设置里面可以找到。</p>
+          <p>4. 删除所有规则：代理规则 -&gt; 删除所有规则。</p>
+          <p>5. 更改 DNS。App 里有两个 DNS 设置项，如果你不知道哪个是干什么的，最好就不要改了。</p>
+          <p>6. 转换到全局模式：代理模式 -&gt; 全局。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">如何申请 TestFlight 测试？</a>
+				<div class="cd-faq-content">
+					<p>到这里填表申请：https://docs.google.com/forms/d/1zlf9UZho9fYYpkm7POSAEA5fIgAJfdRUhZRTcs7wxvE</p>
+          <br/>
+					<p>为什么申请了没通过？一般不会立刻处理，所以需要等几天，处理了的话一般都会通过的，请仔细检查你的邮箱。你不确定的话可以发个简短的邮件询问下，我会简单回复下你是否已处理。</p>
+          <br/>
+					<p>注：不要发邮件或者在推特上申请，那样不受理。（因为我懒，你到上面填表申请我可以批量处理）</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么上 Telegram 时速度非常慢？</a>
+				<div class="cd-faq-content">
+					<p>因为 Telegram 使用 TCP 来传输数据，但现时 App 在默认设置下只代理 HTTP 流量，而 Telegram 会优先使用 TCP 来做网络请求，等 TCP 失败后转用 HTTP，你感觉慢就是因为需要等待 TCP 请求失败。</p>
+					<p>解决方法：</p>
+          <p>1. 开启 Full Tunnel：高级特性 -&gt; Full Tunnel。</p>
+				  <br/>
+					<p>注：开启 Full Tunnel 后会有 2 个 Inbound，总的连接数就会变成 （最大连接数 * 2)，所以开启 Full Tunnel 后最大连接数可能需要适当调小。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">FAQ 里没有想找的答案怎么办？</a>
+				<div class="cd-faq-content">
+					<p>可以发个信息给作者反馈下，邮件或者推特都可以。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+	</div> <!-- cd-faq-items -->
+	<a href="#0" class="cd-close-panel">Close</a>
+</section> <!-- cd-faq -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
