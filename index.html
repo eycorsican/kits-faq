@@ -23,6 +23,17 @@
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
 			<li>
+				<a class="cd-faq-trigger" href="#0">为什么其它 App 可以正常使用，但 XXX （比如 LINE）却上不了？</a>
+				<div class="cd-faq-content">
+					<p>因为这些 App 不使用 HTTP/HTTPS。</p>
+					<p>解决方法：</p>
+          <p>1. 开启 Full Tunnel：高级特性 -&gt; Full Tunnel。</p>
+				  <br/>
+					<p>注：开启 Full Tunnel 后会有 2 个 Inbound，总的连接数就会变成 （最大连接数 * 2)，所以开启 Full Tunnel 后最大连接数可能需要适当调小。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
 				<a class="cd-faq-trigger" href="#0">为什么连接会自动断开？</a>
 				<div class="cd-faq-content">
           <p>检查是否开启了“睡眠时断开连接”功能。</p>
