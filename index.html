@@ -23,6 +23,31 @@
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
 			<li>
+				<a class="cd-faq-trigger" href="#0">软件自带的 Test Server 可以无限使用吗？</a>
+				<div class="cd-faq-content">
+					<p>很明显是不可能的，在 App Store 上的简介中也说了只供参考与测试用，不会有任何稳定性与可用性的保证，这是正式的说法。</p>
+          <br/>
+					<p>只不过现时测试服务器的维护成本并不高，所以随便你用（小声说</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">为什么耗电百分比显示如此高？</a>
+				<div class="cd-faq-content">
+					<p>显示耗电如此之多，一方面是因为其它 App 的网络耗电都算到 Kitsunebi 上了；另一方面是因为 v2ray 有一个叫 IPIfNonMatch 的功能，在默认配置的情况下，所有国外流量都会经过代理加密（这里的言外之意是，那些本来可以正常访问的国外网络流量也会经过代理加密），所以比起其它同类的主要使用域名规则的软件来说，需要加密更多的流量，就会多耗电了。</p>
+          <br/>
+					<p>这里需要提点的是，你可以选择不开启 IPIfNonMatch，像其它同类软件一样主要用域名规则，这样应该能得到比较相近的耗电量比；但是，大部分国外的网站就算可以直接访问，速度也并不会很快，所以把所有国外流量代理后很多时候可以起到加速作用；怎么取舍取决于你，默认配置只是作者觉得比较合适大部分人使用的配置。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Full Tunnel 实际上是个什么样的功能？</a>
+				<div class="cd-faq-content">
+					<p>简单点说，开启后可以代理 TCP/UDP 流量。不开启的话，就只代理 HTTP/HTTPS 流量。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
 				<a class="cd-faq-trigger" href="#0">为什么其它 App 可以正常使用，但 XXX （比如 LINE）却上不了？</a>
 				<div class="cd-faq-content">
 					<p>因为这些 App 不使用 HTTP/HTTPS。</p>
