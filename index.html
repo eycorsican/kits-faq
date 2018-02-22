@@ -34,7 +34,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">为什么耗电百分比显示如此高？</a>
 				<div class="cd-faq-content">
-					<p>显示耗电如此之多，一方面是因为其它 App 的网络耗电都算到 Kitsunebi 上了；另一方面是因为 v2ray 有一个叫 IPIfNonMatch 的功能，在默认配置的情况下，所有国外流量都会经过代理加密（这里的言外之意是，那些本来可以正常访问的国外网络流量也会经过代理加密），所以比起其它同类的主要使用域名规则的软件来说，需要加密更多的流量，就会多耗电了。</p>
+					<p>显示耗电如此之多，一方面是因为其它 App 的网络耗电都算到 Kitsunebi 上了；另一方面是因为 v2ray-core 有一个叫 IPIfNonMatch 的功能，在默认配置的情况下，所有国外流量都会经过代理加密（这里的言外之意是，那些本来可以正常访问的国外网络流量也会经过代理加密），所以比起其它同类的主要使用域名规则的软件来说，需要加密更多的流量，就会多耗电了。</p>
           <br/>
 					<p>这里需要提点的是，你可以选择不开启 IPIfNonMatch，像其它同类软件一样主要用域名规则，这样应该能得到比较相近的耗电量比；但是，大部分国外的网站就算可以直接访问，速度也并不会很快，所以把所有国外流量代理后很多时候可以起到加速作用；怎么取舍取决于你，默认配置只是作者觉得比较合适大部分人使用的配置。</p>
 				</div> <!-- cd-faq-content -->
@@ -44,6 +44,13 @@
 				<a class="cd-faq-trigger" href="#0">Full Tunnel 实际上是个什么样的功能？</a>
 				<div class="cd-faq-content">
 					<p>简单点说，开启后可以代理 TCP/UDP 流量。不开启的话，就只代理 HTTP/HTTPS 流量。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">软件功能看起来很丰富，但具体怎么用？</a>
+				<div class="cd-faq-content">
+					<p>一些基础用法在 App 的脚注中作了简要说明，如果想了解更仔细的用法，可以仔细阅读 <a href="https://www.v2ray.com/" target="_blank">Project V 的文档</a>。</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -90,7 +97,7 @@
 				<a class="cd-faq-trigger" href="#0">我需要从其它地方导入规则来使用吗？</a>
 				<div class="cd-faq-content">
 					<p>1. 这点要看个人需求，我觉得安装 App 后默认的规则已经可以满足一般人的需求了，在使用过程中自己根据实际需要往上加就可以。</p>
-					<p>2. v2ray 一个强大之处是在路由请求时可以把域名解析成 IP，然后用 IP 来来进行 GEOIP 规则匹配，所在如果你选了 IPIfNonMatch（默认) 或 IPOnDemand，你在 Kitsunebi 中使用的 GEOIP 规则跟你在其它软件中使用的 GEOIP 规则是不太一样的，因此可能一条 GEOIP 规则就可以顶上几千条域名规则了，功能上要强大很多。有人或许会担心 DNS 解析的延时，这个其实不必要太在意，有缓存的。当然这种做法也会存在着一些问题，但目前来看影响不大。</p>
+					<p>2. v2ray-core 一个强大之处是在路由请求时可以把域名解析成 IP，然后用 IP 来来进行 GEOIP 规则匹配，所在如果你选了 IPIfNonMatch（默认) 或 IPOnDemand，你在 Kitsunebi 中使用的 GEOIP 规则跟你在其它软件中使用的 GEOIP 规则是不太一样的，因此可能一条 GEOIP 规则就可以顶上几千条域名规则了，功能上要强大很多。有人或许会担心 DNS 解析的延时，这个其实不必要太在意，有缓存的。当然这种做法也会存在着一些问题，但目前来看影响不大。</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
