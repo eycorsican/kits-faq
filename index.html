@@ -23,6 +23,13 @@
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
 			<li>
+				<a class="cd-faq-trigger" href="#0">Full Tunnel? Tunnel HTTP Proxy? 开启哪个？</a>
+				<div class="cd-faq-content">
+					<p>默认两个都开启。建议必开 Tunnel HTTP Proxy，选择性开 Full Tunnel。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
 				<a class="cd-faq-trigger" href="#0">软件自带的 Test Server 可以无限使用吗？</a>
 				<div class="cd-faq-content">
 					<p>很明显是不可能的，在 App Store 上的简介中也说了只供参考与测试用，不会有任何稳定性与可用性的保证，这是正式的说法。</p>
@@ -44,6 +51,7 @@
 				<a class="cd-faq-trigger" href="#0">Full Tunnel 实际上是个什么样的功能？</a>
 				<div class="cd-faq-content">
 					<p>简单点说，开启后可以代理 TCP/UDP 流量。不开启的话，就只代理 HTTP/HTTPS 流量。</p>
+					<p>有小部分 App 会用到非 HTTP/HTTPS 协议来传数据，这时候就可能需要开 Full Tunnel 来代理这些流量，App 才能正常使用。</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
