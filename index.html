@@ -181,6 +181,33 @@
 			</li>
 
 			<li>
+				<a class="cd-faq-trigger" href="#0">Kitsunebi 生成服务器配置 URI、二维码 URL 的格式是什么？</a>
+				<div class="cd-faq-content">
+        <p>vmess://base64(security:uuid@host:port)?[urlencode(parameters)]</p>
+        <br/>
+        <p>其中 base64、urlencode 为函数，security 为加密方式，parameters 是以 &amp; 为分隔符的参数列表，例如：network=kcp&amp;aid=32&amp;remark=服务器1 经过 urlencode 后为 network=kcp&amp;aid=32&amp;remark=%E6%9C%8D%E5%8A%A1%E5%99%A81</p>
+        <br/>
+        <p>可选参数（参数名称不区分大小写）：</p>
+        <p>network  可选的值为 "tcp"、 "kcp" 或 "ws"</p>
+        <p>wsPath  WebSocket 的协议路径</p>
+        <p>kcpHeader  kcp 的伪装类型</p>
+        <p>uplinkCapacity  kcp 的上行容量</p>
+        <p>downlinkCapacity  kcp 的下行容量</p>
+        <p>h2Path  h2 的路径</p>
+        <p>h2Host  h2 的域名</p>
+        <p>aid  AlterId</p>
+        <p>tls  是否启用 TLS，为 0 或 1</p>
+        <p>allowInsecure  TLS 的 AllowInsecure，为 0 或 1</p>
+        <p>tlsServer  TLS 的服务器端证书的域名</p>
+        <p>mux  是否启用 mux，为 0 或 1</p>
+        <p>muxConcurrency  mux 的 最大并发连接数</p>
+        <p>remark  备注名称</p>
+        <br/>
+        <p>导入配置时，不在列表中的参数一般会按照 Core 的默认值处理。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
 				<a class="cd-faq-trigger" href="#0">FAQ 里没有想找的答案怎么办？</a>
 				<div class="cd-faq-content">
 					<p>可以发个信息给作者反馈下，邮件或者推特都可以。</p>
