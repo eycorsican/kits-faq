@@ -41,7 +41,7 @@
         <p>关于 DNS 请求流量的流向：</p>
         <p>上面主要提到哪些请求使用哪个 DNS，确定了 DNS 服务器后，发起的 DNS 请求的流向也在此作简要的说明。</p>
         <p>非 VPN 进程所发起的 DNS 请求由系统生成，使用的是 Tunnel DNS，作为 UDP 流量经 tun2socks，给到 Core 的 Socks Inbound，之后的路由过程之类的该怎么走怎么走，这种 DNS 请求的日志的状态码是 0。</p>
-        <p>Core 发起的 DNS 请求一般由 Core 内置的 DNS 服务器生成，使用域名策略 DNS，作为 UDP 流量，一步到路由过程，之后该怎么走就怎么走，这种 DNS 请求的日志的状态码是 1。</p>
+        <p>Core 发起的 DNS 请求一般由 Core 内置的 DNS 服务器生成，使用域名策略 DNS，作为 UDP 流量，一步到路由过程，之后该怎么走就怎么走，这种 DNS 请求的日志的状态码是 1。（路由请求时做的 DNS 解析和使用 UseIP 作为域名策略的 Freedom Outbound 都属此类）</p>
         <p>Core 发起的使用系统 DNS 的 DNS 请求，由系统生成并处理，不会留下任何日志。（使用 AsIs 作为域名策略的 Freedom Outbound 以及向代理服务器发起代理连接时，都使用这种方式）</p>
 				</div> <!-- cd-faq-content -->
 			</li>
