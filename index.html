@@ -25,6 +25,10 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">域名策略 DNS 和 Tunnel DNS 分别被用在哪里？</a>
 				<div class="cd-faq-content">
+        <p>tl;dr</p>
+        <p>Tunnel DNS 不太重要，建议设置为国外的 DNS。</p>
+        <p>域名策略 DNS 可以用来覆盖系统 DNS，启用 “覆盖系统 DNS” 即可，如果选择覆盖系统 DNS，建议以国内 DNS 为主，例如：223.5.5.5,8.8.8.8，否则可以国外 DNS 为主，例如：8.8.8.8,223.5.5.5。</p>
+        <br/>
         <p>首先需要分清楚解析域名的请求由什么进程发起的，大体上分两类，一是 VPN 进程（即运行 Core 的进程），二是非 VPN 进程。</p>
         <br/>
         <p>域名策略 DNS：这个 DNS 会被用到路由决策（规则匹配）以及 Freedom Outbound 中。当路由策略为 IPIfNonMatch/IPOnDemand 时，这个 DNS 就会有机会被用在请求域名的解析；当 Freedom Outbound 的 域名策略为 UseIP 时（通过启用 “覆盖系统 DNS” 来设置，默认值为 AsIs，即使用系统 DNS），所有走 Freedom Outbound (direct) 的请求的域名都会用这个 DNS 来解析。</p>
