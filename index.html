@@ -28,9 +28,11 @@
         <p>首先需要分清楚解析域名的请求由什么进程发起的，大体上分两类，一是 VPN 进程（即运行 Core 的进程），二是非 VPN 进程。</p>
         <br/>
         <p>域名策略 DNS：这个 DNS 会被用到路由决策（规则匹配）以及 Freedom Outbound 中。当路由策略为 IPIfNonMatch/IPOnDemand 时，这个 DNS 就会有机会被用在请求域名的解析；当 Freedom Outbound 的 域名策略为 UseIP 时，所有走 Freedom Outbound (direct) 的请求的域名都会用这个 DNS 来解析。</p>
-        <p>Tunnel DNS：当其它 App、其它进程（即 VPN 进程以外的其它程序）需要做域名解析时，这个 DNS 就会被用到。
+        <br/>
+        <p>Tunnel DNS：当其它 App、其它进程（即 VPN 进程以外的其它程序）需要做域名解析时，这个 DNS 就会被用到。</p>
         <br/>
         <p>举例说，Kitsunebi（Kitsunebi 的 UI App 本身不是 VPN 进程）有对服务器做 ping 测速的功能，当服务器地址为域名时，Kitsunebi 做测速前就要先解析域名，这时就会用 Tunnel DNS 来做这个解析。有个要注意的地方是，比如说，在开着 Kitsunebi（默认配置）的情况下，当你用浏览器打开百度网页（或其它网页）时，做的是 HTTP(S) 请求，那浏览器是没做 DNS 解析的。</p>
+        <br/>
         <p>再举另一个例子，比如 iOS 推送通知服务，貌似是用 TCP 连接方式来实现，并且地址是通过解析域名来获取，并且用 TLS 来传输数据（我真没了解过，不过作为举例就当它是这么回事吧），那这时就会用 Tunnel DNS 来解析地址，取得地址后发起连接，流量经由 tun2socks，给到 Core 的 Socks Inbound，这时因为开了 domainOverride，相应的域名会被取出来，这个域名后面会经过路由、代理；如果走 Freedom Outbound，那过程看上面；如果走代理，那这个域名会被代理服务器再次解析；所以这个域名最多可能在 3 个地方（发起请求的进程、路由、代理服务器）分别被解析。</p>
         <br/>
         <p>关于系统 DNS：</p>
