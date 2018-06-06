@@ -27,7 +27,7 @@
 				<div class="cd-faq-content">
         <p>首先需要分清楚解析域名的请求由什么进程发起的，大体上分两类，一是 VPN 进程（即运行 Core 的进程），二是非 VPN 进程。</p>
         <br/>
-        <p>域名策略 DNS：这个 DNS 会被用到路由决策（规则匹配）以及 Freedom Outbound 中。当路由策略为 IPIfNonMatch/IPOnDemand 时，这个 DNS 就会有机会被用在请求域名的解析；当 Freedom Outbound 的 域名策略为 UseIP 时，所有走 Freedom Outbound (direct) 的请求的域名都会用这个 DNS 来解析。</p>
+        <p>域名策略 DNS：这个 DNS 会被用到路由决策（规则匹配）以及 Freedom Outbound 中。当路由策略为 IPIfNonMatch/IPOnDemand 时，这个 DNS 就会有机会被用在请求域名的解析；当 Freedom Outbound 的 域名策略为 UseIP 时（通过启用 “覆盖系统 DNS” 来设置，默认值为 AsIs，即使用系统 DNS），所有走 Freedom Outbound (direct) 的请求的域名都会用这个 DNS 来解析。</p>
         <br/>
         <p>Tunnel DNS：当其它 App、其它进程（即 VPN 进程以外的其它程序）需要做域名解析时，这个 DNS 就会被用到。</p>
         <br/>
