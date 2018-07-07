@@ -23,6 +23,17 @@
 	<div class="cd-faq-items">
 		<ul id="basics" class="cd-faq-group">
 			<li>
+				<a class="cd-faq-trigger" href="#0">订阅功能的 URL 内容是什么样格式？</a>
+				<div class="cd-faq-content">
+					<p>base64(URI[\nURI ...])</p>
+          <br/>
+					<p>其中 base64 为函数，URI 为服务器配置 URI，URI 规范可参考本页另一个条目，\n 为换行符。本格式规范取自 v2rayN：https://github.com/2dust/v2rayN/wiki/%E8%AE%A2%E9%98%85%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E</p>
+          <br/>
+					<p>URI 格式除了 Kitsunebi 自身的 URI 格式外，还会尽可能兼容其它格式，如果你发现某个格式有兼容问题，欢迎反馈。</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
 				<a class="cd-faq-trigger" href="#0">域名策略 DNS 和 Tunnel DNS 分别被用在哪里？</a>
 				<div class="cd-faq-content">
         <p>tl;dr</p>
