@@ -198,9 +198,11 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Kitsunebi 生成服务器配置 URI、二维码 URL 的格式是什么？</a>
 				<div class="cd-faq-content">
-        <p>vmess://base64(security:uuid@host:port)?[urlencode(parameters)]</p>
+        <p>vmess://base64(security:uuid@host:port)?[key=urlencode(value)[&amp;key=urlencode(value) ...]]</p>
         <br/>
-        <p>其中 base64、urlencode 为函数，security 为加密方式，parameters 是以 &amp; 为分隔符的参数列表，例如：network=kcp&amp;aid=32&amp;remark=服务器1 经过 urlencode 后为 network=kcp&amp;aid=32&amp;remark=%E6%9C%8D%E5%8A%A1%E5%99%A81</p>
+        <p>其中 base64、urlencode 为函数，security 为加密方式，最后一部分是以 &amp; 为分隔符的参数列表，key 为参数名称，value 为相应的值，例如：network=kcp&amp;aid=32&amp;remark=服务器1 经过 urlencode 后为 network=kcp&amp;aid=32&amp;remark=%E6%9C%8D%E5%8A%A1%E5%99%A81</p>
+        <br/>
+        <p>一个完整的例子：vmess://Y2hhY2hhMjAtcG9seTEzMDU6OTUxMzc4NTctNzBmYS00YWM4LThmOTAtNGUyMGFlYjY2MmNmQHVuaS5raXRzdW5lYmkuZnVuOjU2NjY=?network=ws&amp;wsPath=/v2&amp;aid=0&amp;tls=1&amp;allowInsecure=1&amp;mux=0&amp;muxConcurrency=8&amp;remark=WSS%20Test%20Outbound</p>
         <br/>
         <p>可选参数（参数名称不区分大小写）：</p>
         <p>network - 可选的值为 "tcp"、 "kcp"、"ws"、"h2" 等</p>
